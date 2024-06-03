@@ -6,10 +6,10 @@ import config
 class DB_manager:
     try:
         conn = psycopg2.connect(
-            dbname="history",
-            user="postgres",
+            dbname="dbstud",
+            user="itmo409634_2024",
             password=config.pswd,
-            host="localhost",
+            host="146.185.211.205",
             port="5432"
         )
     except:

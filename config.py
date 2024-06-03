@@ -1,4 +1,5 @@
-
+token = 'token'
+pswd = 'pswd'
 
 St_wait = "0"
 St_name_quest = "1"
