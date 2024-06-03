@@ -97,7 +97,11 @@ class Bot:
                     db_manager = DB_manager()
                     self.questions_of_quest = db_manager.get_questions(message.text)
                     self.quest_rate_id = message.text
-                    self.bot.send_message(message.from_user.id, self.questions_of_quest[self.j][0])
+                    try:
+                        self.bot.send_message(message.from_user.id, self.questions_of_quest[self.j][0])
+                    except:
+                        self.bot.send_message(message.from_user.id, "В этом квесте нет вопросов")
+                        restart(message)
                     self.state = config.St_ans_on_question
 
                 @self.bot.message_handler(content_types=['text'],
@@ -112,6 +116,7 @@ class Bot:
                             self.state = config.St_ans_on_question
                         else:
                             self.state = config.St_wait
+                            self.j = 0
                             rating(message.from_user.id)
                     elif (message.text[0] == '/'):
                         self.state = config.St_wait

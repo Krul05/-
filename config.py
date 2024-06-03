@@ -1,5 +1,5 @@
-token = 'token'
-pswd = 'pswd'
+token = '6343286955:AAGix-Gvr2oImfqUZBDI7ihJt0Z0XJlj8p8'
+pswd = 's16082005'
 
 St_wait = "0"
 St_name_quest = "1"
